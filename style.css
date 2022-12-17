@@ -1,0 +1,221 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: rgb(201, 162, 159);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-menu {
+  height: 70px;
+  margin: 20px;
+  background-color: #eee;
+  padding: 10px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  border: 3px rgb(167, 167, 167) dashed;
+}
+
+.drop-area {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drop-area input {
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.drop-area .title-mobile {
+  display: none;
+}
+
+.colors {
+  height: 100%;
+  width: fit-content;
+  max-width: 800px;
+  /* margin-top: 80px; */
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #eee;
+  margin: 10px;
+}
+
+.card .img-view {
+  width: 170px;
+  height: 170px;
+  min-width: 170px;
+  overflow: hidden;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card .info {
+  width: 100%;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .color-preview {
+  height: 100%;
+  width: 100%;
+  min-width: 150px;
+  height: 50px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.card .info .color-info {
+  margin: 5px;
+}
+
+.card .info .color-item div {
+  float: left;
+}
+
+.card .info .color-title {
+  width: 60px;
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.card .info .color-name {
+  font-size: 20px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.card .info .color-name:hover {
+  color: rgb(63, 218, 245)
+}
+
+.alert-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.alert-container .alert {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  min-width: 250px;
+  max-width: 100%;
+  margin: 20px;
+  animation-name: alertAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.alert-container .progress {
+  height: 2px;
+  width: 100%;
+  background-color: rgb(110, 197, 255);
+  animation-name: progressAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.github-link {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes alertAnimation {
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .content {
+    padding: 10px;
+    height: 100%;
+  }
+
+  .select-menu {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+  }
+
+  .drop-area .title-pc {
+    display: none;
+  }
+
+  .drop-area .title-mobile {
+    display: unset;
+  }
+
+  .colors {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+  }
+
+  .card .img-view {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
+  }
+
+  .card .info {
+    margin: 0;
+  }
+}
